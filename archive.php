@@ -18,7 +18,7 @@
 
         <?php echo paginate_links(); ?>
 
-      <p>Template: home.php</p>
+      <p>Template: archive.php</p>
 
     </main>
 
