@@ -23,7 +23,8 @@
 
 <div class="entry-content">
 
-  <p><img src="<?php echo esc_url( $post->guid ); ?>"  alt="<?php echo esc_attr( get_the_title() ); ?>"></p>
+  <video src="<?php echo esc_url( $post->guid ); ?>" controls></video>
+  
   <?php the_content(); ?>
 
 </div>
@@ -48,7 +49,7 @@
 
       <?php endif; ?>
 
-      <p>Template: image.php</p>
+      <p>Template: video.php</p>
 
     </main>
 
