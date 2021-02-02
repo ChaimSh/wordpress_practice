@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header( 'splash' ); ?>
 
   <div id="primary" class="content-area">
 
@@ -36,10 +36,10 @@
 
       <?php endwhile; endif;?>
 
-      <p>Template: single-portfolio.php</p>
+      <p>Template: single-portfolio-for-wordpress.php</p>
 
     </main>
 
   </div>
 
-<?php get_footer(); ?>
+<?php get_footer( 'splash' ); ?>
