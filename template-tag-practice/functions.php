@@ -23,7 +23,8 @@ add_action( 'wp_enqueue_scripts', 'wphierarchy_enqueue_styles' );
 
 // Register Menu Locations
 register_nav_menus( [
-  'main-menu' => esc_html__( 'Main Menu', 'wpheirarchy' ),
+  'main-menu' => esc_html__( 'Main Menu', 'wptags' ),
+  'footer-menu' => esc_html__( 'Footer Menu', 'wptags' ),
 ]);
 
 
