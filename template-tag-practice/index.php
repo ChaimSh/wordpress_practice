@@ -12,6 +12,17 @@
 
             <?php the_title(); ?>
 
+
+            <?php if( has_post_thumbnail() ): ?>
+
+            <?php 
+              
+              the_post_thumbnail();
+              
+              ?>
+
+              <?php endif; ?>
+
         </header>
 
         <div class="entry-content">
