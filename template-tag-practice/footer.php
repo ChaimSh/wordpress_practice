@@ -3,6 +3,8 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 
+  <?php do_action( 'wphooks_before_footer' ); ?>
+
     <?php 
         $args = [
             'theme_location' => 'footer-menu',

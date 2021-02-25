@@ -20,6 +20,11 @@ function wphierarchy_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'wphierarchy_enqueue_styles' );
 
+function wphooks_before_footer_messaafe() {
+  echo '<p>My custom footer text!</p>'
+}
+add_action( 'wphooks_before_footer', 'wphooks_before_footer_message', 10 );
+
 
 // Register Menu Locations
 register_nav_menus( [
