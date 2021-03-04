@@ -25,6 +25,21 @@ function wphooks_before_footer_message() {
 }
 add_action( 'wphooks_before_footer', 'wphooks_before_footer_message', 10 );
 
+function wphooks_make_uppercase($message) {
+
+  $new_message = strtoupper( $message );
+  return $new_message;
+
+}
+add_filter( 'wphooks_footer_message', 'wphooks_make_uppercase', 15 );
+
+
+function wp_hooks_cta() {
+  if( in_the_loop() ) {
+    locate_template( 'template-parts/comment-cta.php', true );
+  }
+}
+add_action('pre_get_comments', 'wp_hooks_cta');
 
 // Register Menu Locations
 register_nav_menus( [
