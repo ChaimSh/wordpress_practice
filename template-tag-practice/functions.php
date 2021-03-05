@@ -48,6 +48,17 @@ register_nav_menus( [
 ]);
 
 
+function wptags_title_markup( $title, $id ) {
+  if ( is_singular() && in_the_loop() ) {
+    $title = '<h1>' . $title . '</h1>';
+  } else if ( !is_singular() && in_the_loop() ) {
+    $title = '<h2><a href="' . get_permalink($id) . '">' . $title . '</a></h2>';
+  }
+
+  return $title;
+};
+add_filter( 'the_title', 'wptags_title_markup', 10, 2 );
+
 // Setup Widget Areas
 function wphierarchy_widgets_init() {
   register_sidebar([
