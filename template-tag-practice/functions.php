@@ -59,6 +59,32 @@ function wptags_title_markup( $title, $id ) {
 };
 add_filter( 'the_title', 'wptags_title_markup', 10, 2 );
 
+
+function wptags_content_ads( $content ) {
+
+  if( !in_the_loop() ) {
+    return;
+  }
+
+  $paragraphs;
+  $pattern = "/<p>.*?<\/p>/m";
+  $p_count = preg_match_all( $pattern, $content, $paragraphs );
+  $paragraphs = $paragraphs[0];
+
+  $ad_p_number = floor( $p_count / 2 );
+  if( 0 == $ad_p_number ) $ad_p_number = 1;
+  $ad_p = $paragraphs[ $ad_p_number - 1 ];
+
+  $post_ad = '<div class="past_ad"><h2>Post Add</h2></div>';
+  $ad_p_w_ad = '<p>' . $ad_p . '</p>' . $post_ad;
+
+
+  $content_w_ad = str_replace( $ad_p, $ad_p_w_ad, $content );
+
+  return $content_w_ad;
+}
+add_filter( 'the_content', 'wptags_content_ads', 10 );
+
 // Setup Widget Areas
 function wphierarchy_widgets_init() {
   register_sidebar([
